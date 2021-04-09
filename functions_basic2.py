@@ -50,16 +50,15 @@ def values_greater_than_second(lst):
         if lst[i] > lst[1]:
             new_lst = new_lst + [lst[i]]
     return new_lst
-print(values_greater_than_second([5]))
+print(values_greater_than_second([5,3,2,4,5,2]))
 
-#Size And Value  still working on this
-# def size_value(size, value):
-#     new_lst = []
-#     index = 0
-#     for i in range(size):
-#         new_lst[index] + 1
-#     return new_lst
-# print(size_value(3,5))
+#Size And Value 
+def size_value(size, value):
+    new_lst = []
+    for i in range(size):
+        new_lst = new_lst + [value]
+    return new_lst
+print(size_value(5,5))
 
 
 
