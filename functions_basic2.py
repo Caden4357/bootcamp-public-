@@ -58,7 +58,7 @@ def size_value(size, value):
     for i in range(size):
         new_lst = new_lst + [value]
     return new_lst
-print(size_value(5,5))
+print(size_value(5,10))
 
 
 
