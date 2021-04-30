@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Tinder</title>
+</head>
+<body>
+    <!-- Sign up for panda tinder -->
+    <h1>Panda Tinder App</h1>
+    <form action="/create" method="POST">
+        {%csrf_token%}
+        <!-- name -->
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <!-- age -->
+        <label for="age">Age</label>
+        <input type="number" name="age" id="">
+        <!-- food -->
+        <label for="food">Favorite Food</label>
+        <input type="text" name="food" id="">
+        <!-- kungfu -->
+        <label for="kungfu">Do you know Kungfu?</label>
+        <label for="true">True</label>
+        <input type="radio" name="kungfu" value="True">
+        <label for="false">False</label>
+        <input type="radio" name="kungfu" value="False">
+
+        <input type=submit value="Add Panda">
+    </form>
+    <!-- retrieving the data from the database -->
+    <div>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Favorite Food</th>
+                <th>Knows Kungfu</th>
+
+            </thead>
+            <tbody>
+                {% for panda in all_pandas %}
+                <tr>
+                    <td><a href="/panda/{{panda.id}}">{{panda.name}}</td></a>
+                    <td>{{panda.age}}</td>
+                    <td>{{panda.favorite_food}}</td>
+                    <td>{{panda.kungfu}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
